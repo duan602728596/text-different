@@ -35,14 +35,17 @@ class Text extends Component{
     super(...arguments);
     
     this.state = {
-      text: '你好!'
+      text: 'Hello, world!'
     };
+  }
+  componentDidMount(){
+    // Do something.
   }
   render(){
     return (
       <div className={ style.text }>
         <h2>{ this.state.text }</h2>
-        <Button type="primary">点击</Button>
+        <Button type="primary">Click</Button>
       </div>
     );
   }
