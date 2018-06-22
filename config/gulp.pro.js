@@ -1,7 +1,9 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const rollup = require('rollup');
-const uglify = require('rollup-plugin-uglify');
+const uglify = require('rollup-plugin-uglify').uglify;
+
+console.log(typeof  uglify.default);
 
 let dirname = null;
 
@@ -22,15 +24,15 @@ function build(){
   };
 
   return Promise.all([
-    {
+    rollup.rollup({
       input: entry
-    },
-    {
+    }),
+    rollup.rollup({
       input: entry,
       plugins: [
         uglify()
       ]
-    }
+    })
   ]).then((bundle)=>{
     bundle[0].write({
       ...config,
