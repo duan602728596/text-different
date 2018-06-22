@@ -1,6 +1,9 @@
 import generatingCodeTree from './generatingCodeTree';
 
-/* 单行对比 */
+/**
+ * 单行对比
+ * @param { Array } codeTree: 文本解析树
+ */
 function oneLineComparison(codeTree: Array): Array{
   let len: number = codeTree.length;
   let oldIndex: number = 0;  // 定义旧文本块的游标

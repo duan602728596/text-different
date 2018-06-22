@@ -7,7 +7,7 @@
  * @param { Array<string> } oldTextArray: 旧的代码数组
  * @param { Array<string> } newTextArray: 新的代码数组
  */
-function generatingCodeTree(oldTextArray: string[], newTextArray: string): Array{
+function generatingCodeTree(oldTextArray: string[], newTextArray: string): { tree: Array, difference: number }{
   const tree: [] = [];                              // 最后的文本树
   const oldTextLen: number = oldTextArray.length;   // 旧文本的行数
   const newTextLen: number = newTextArray.length;   // 新文本的行数
