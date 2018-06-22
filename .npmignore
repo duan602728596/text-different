@@ -1,0 +1,18 @@
+# node
+node_modules
+npm-debug.log
+package-lock.json
+
+# yarn
+yarn.lock
+yarn-error.log
+
+# webstorm
+.idea
+
+# src
+src
+test
+config
+gulpfile.js
+.babelrc

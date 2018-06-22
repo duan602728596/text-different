@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="../build/textDifferent.js"></script>
+</head>
+<body>
+<script>
+  const olds = 'c1\nabc1\nabc2\n16\n1347\n13\n678\n2';
+  const news = 'c1\nabd1\nabd2\n\n1347\n13\n2';
+  const t = textDifferent(olds, news);
+  console.log(t);
+</script>
+</body>
+</html>
