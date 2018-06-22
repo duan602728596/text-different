@@ -1,0 +1,46 @@
+.main {
+  width: 1300px;
+}
+.main:after {
+  content: '\200B';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.text-content {
+  float: left;
+  margin: 0 10px;
+  width: 520px;
+  border: 1px solid #000;
+}
+.line-old, .line-new, .line-normal, .line-space {
+  height: 16px;
+  padding: 2px 5px 2px 40px;
+  font: 12px Consolas, '微软雅黑', monospace;
+  line-height: 16px;
+}
+.line-old {
+  background-color: #ffada3;
+}
+.line-new {
+  background-color: #ccffc1;
+}
+.line-old-change {
+  background-color: #f00;
+}
+.line-new-change {
+  background-color: #0f0;
+}
+.line-space {
+  background-color: #ddd;
+}
+.line-number {
+  display: inline-block;
+  margin: 0 10px 0 -40px;
+  width: 40px;
+  height: 100%;
+  border-right: 1px solid #4b4b4b;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+}
