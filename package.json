@@ -3,6 +3,17 @@
   "version": "0.0.1",
   "description": "比较文本的不同，并生成差异树。",
   "main": "lib/index.js",
+  "author": {
+    "name": "段昊辰",
+    "email": "duanhaochen@126.com",
+    "url": "https://github.com/duan602728596"
+  },
+  "homepage": "https://github.com/duan602728596/text-different",
+  "bugs": {
+    "url" : "https://github.com/duan602728596/text-different/issues",
+    "email" : "duanhaochen@126.com"
+  },
+  "license": "MIT",
   "scripts": {
     "start": "npm run cleanlib && npm run cleanbuild && cross-env NODE_ENV=development ./node_modules/.bin/gulp",
     "build": "npm run cleanlib && npm run cleanbuild && cross-env NODE_ENV=production ./node_modules/.bin/gulp",
