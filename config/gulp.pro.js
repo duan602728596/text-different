@@ -16,8 +16,8 @@ function babelProject(){
 function build(){
   // rollup
   const entry = dirname + '/lib/index.js';
-  const dest = dirname + '/build/textDifferent.js';
-  const destMin = dirname + '/build/textDifferent.min.js';
+  const dest = dirname + '/build/text-different.js';
+  const destMin = dirname + '/build/text-different.min.js';
   const config = {
     format: 'umd',
     name: 'textDifferent'

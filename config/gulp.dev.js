@@ -24,7 +24,7 @@ function babelProject(){
 function build(){
   // rollup
   const entry = dirname + '/lib/index.js';
-  const dest = dirname + '/build/textDifferent.js';
+  const dest = dirname + '/build/text-different.js';
 
   return rollup.rollup({
     input: entry
