@@ -8,6 +8,8 @@
     "build": "npm run cleanlib && npm run cleanbuild && cross-env NODE_ENV=production ./node_modules/.bin/gulp",
     "cleanlib": "./node_modules/.bin/rimraf lib",
     "cleanbuild": "./node_modules/.bin/rimraf build",
+    "inittest": "./node_modules/.bin/mocha init test",
+    "test": "node ./config/test.js",
     "eslint": "./node_modules/.bin/eslint src"
   },
   "devDependencies": {
@@ -16,6 +18,7 @@
     "@babel/preset-flow": "^7.0.0-beta.51",
     "babel-eslint": "^8.2.3",
     "browser-sync": "^2.24.4",
+    "chai": "^4.1.2",
     "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
     "eslint-plugin-flowtype": "^2.49.3",
@@ -24,6 +27,7 @@
     "gulp-changed": "^3.2.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
+    "mocha": "^5.2.0",
     "rimraf": "^2.6.2",
     "rollup": "^0.61.1",
     "rollup-plugin-uglify": "^4.0.0"
