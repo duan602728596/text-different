@@ -1,4 +1,8 @@
-const oldScript = `import React, { Component } from 'react';
+const oldScript = `/*
+666
+ */
+
+import React, { Component } from 'react';
 import style from './style.sass';
 
 class Text extends Component{
@@ -22,7 +26,11 @@ class Text extends Component{
 
 export default Text;`;
 
-const newScript = `import React, { Component } from 'react';
+const newScript = `/*
+766
+ */
+
+import React, { Component } from 'react';
 import {
   Table,
   message,

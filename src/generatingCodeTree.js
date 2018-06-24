@@ -25,6 +25,18 @@ function generatingCodeTree(oldTextArray: string[], newTextArray: string): { tre
       difference++;
       oldIndex++;
       newIndex++;
+    }else if(oldTextArray[oldIndex + 1] === newTextArray[newIndex + 1]){
+      // 当前文本行不同，但是下一个文本行相同的情况
+      tree.push({
+        text: oldTextArray[oldIndex],
+        status: 1
+      });
+      tree.push({
+        text: newTextArray[newIndex],
+        status: 2
+      });
+      oldIndex++;
+      newIndex++;
     }else{
       // 碰到文本不同后获取下一个相同的行
       let oldFindIndex: number = oldIndex;

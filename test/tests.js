@@ -104,9 +104,9 @@ class Text extends Component{
         { status: 0, text: '44' },
         { status: 0, text: '55' },
         { status: 3, text: [
+            { status: 1, text: '6' },
             { status: 2, text: '7' },
-            { status: 0, text: '6' },
-            { status: 1, text: '6' }
+            { status: 0, text: '6' }
           ] },
         { status: 0, text: '77' },
         { status: 3, text: [
