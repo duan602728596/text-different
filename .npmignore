@@ -16,3 +16,7 @@ test
 config
 gulpfile.js
 .babelrc
+.eslintignore
+.eslintrc.yml
+example
+.gitignore
