@@ -1,6 +1,6 @@
 {
   "name": "text-different",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "比较文本的不同，并生成差异树。",
   "main": "lib/index.js",
   "author": {
