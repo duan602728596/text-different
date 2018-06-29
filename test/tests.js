@@ -37,8 +37,7 @@ describe('text-different测试用例', function(){
         { status: 0, text: 'e' },
         { status: 1, text: 'f' },
         { status: 1, text: 'g' },
-        { status: 0, text: 'h' },
-        { status: 1, text: '' }
+        { status: 0, text: 'h' }
       ]);
     });
 
