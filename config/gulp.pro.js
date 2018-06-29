@@ -1,9 +1,7 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
-const rollup = require('rollup');
-const uglify = require('rollup-plugin-uglify').uglify;
-
-console.log(typeof  uglify.default);
+const { rollup } = require('rollup');
+const { uglify } = require('rollup-plugin-uglify');
 
 let dirname = null;
 
@@ -13,36 +11,37 @@ function babelProject(){
     .pipe(gulp.dest(dirname + '/lib'));
 }
 
-function build(){
-  // rollup
-  const entry = dirname + '/lib/index.js';
-  const dest = dirname + '/build/text-different.js';
-  const destMin = dirname + '/build/text-different.min.js';
+async function build(){
+  // 文件输入和输出路径
+  const textDifferentEntry = dirname + '/lib/index.js';
+  const textDifferentDist = dirname + '/build/text-different.js';
+  const textDifferentMinDist = dirname + '/build/text-different.min.js';
+
   const config = {
     format: 'umd',
     name: 'textDifferent'
   };
 
-  return Promise.all([
-    rollup.rollup({
-      input: entry
-    }),
-    rollup.rollup({
-      input: entry,
-      plugins: [
-        uglify()
-      ]
+  // 输入
+  const bundle = await Promise.all([
+    rollup({ input: textDifferentEntry }),
+    rollup({
+      input: textDifferentEntry,
+      plugins: [uglify()]
     })
-  ]).then((bundle)=>{
+  ]);
+
+  // 输出
+  await Promise.all([
     bundle[0].write({
       ...config,
-      file: dest
-    });
+      file: textDifferentDist
+    }),
     bundle[1].write({
       ...config,
-      file: destMin
-    });
-  });
+      file: textDifferentMinDist
+    })
+  ]);
 }
 
 module.exports = function(dir){
