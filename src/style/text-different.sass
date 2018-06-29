@@ -1,0 +1,44 @@
+$name: text-different
+$red: #f00
+$green: #0f0
+
+.#{ $name }-main
+  display: flex
+.#{ $name }-content
+  margin: 0 5px
+  width: 50%
+  padding: 0
+  border: 1px solid #a1a1a1
+.#{ $name }-code
+  position: relative
+  padding: 5px 0
+  font: 13px Consolas, monospace, '微软雅黑', '宋体'
+  line-height: 20px
+.#{ $name }-line-old, .#{ $name }-line-new, .#{ $name }-line-normal, .#{ $name }-line-space
+  display: inline-block
+  box-sizing: border-box
+  width: 100%
+  margin: 0
+  padding: 0 10px
+.#{ $name }-line-old
+  background-color: rgba($red, .1)
+.#{ $name }-line-new
+  background-color: rgba($green, .1)
+.#{ $name }-line-old-change
+  background-color: rgba($red, .3)
+.#{ $name }-line-new-change
+  background-color: rgba($green, .7)
+.#{ $name }-line-space
+  background-color: #ddd
+  &:after
+    content: '\200B'
+.#{ $name }-line-number-box
+  position: absolute
+  top: 5px
+  bottom: 5px
+  left: 0
+.#{ $name }-line-number
+  display: block
+  margin-right: 10px
+  text-align: center
+  border-right: 1px solid #a1a1a1
