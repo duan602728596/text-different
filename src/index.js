@@ -1,6 +1,6 @@
-import generatingCodeTree from './generatingCodeTree';
-import oneLineComparison from './oneLineComparison';
-import entityCharacter from './entityCharacter';
+import generatingCodeTree from './unit/generatingCodeTree';
+import oneLineComparison from './unit/oneLineComparison';
+import entityCharacter from './unit/entityCharacter';
 
 /**
  * @param { string } oldText: 旧代码
@@ -15,6 +15,9 @@ function textDifferent(oldText: string, newText: string): Array{
   /* 将文本解析成一行一行的数组 */
   const oldTextArray: string[] = ot.split(/\n/);
   const newTextArray: string[] = nt.split(/\n/);
+
+  if(oldTextArray[oldTextArray.length - 1] === '') oldTextArray.pop();
+  if(newTextArray[newTextArray.length - 1] === '') newTextArray.pop();
 
   const codeTree: {
     tree: Array,
