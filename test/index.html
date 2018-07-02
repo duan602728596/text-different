@@ -16,9 +16,11 @@
     <script src="../node_modules/highlightjs/highlight.pack.js"></script>
     <!-- 核心方法 -->
     <script src="../build/text-different.js"></script>
+    <!-- 原生html -->
+    <script src="../build/text-different-for-html.js"></script>
     <!-- react组件 -->
     <script src="../build/text-different-for-react.js"></script>
-    <!-- 测试 -->
+    <!-- 测试环境 -->
     <script src="mocha.js"></script>
     <script src="../node_modules/chai/chai.js"></script>
     <script>mocha.setup('bdd');</script>
@@ -26,7 +28,9 @@
       const expect = chai.expect;
       const textDifferent = window.textDifferent;
     </script>
+    <!-- 测试脚本 -->
     <script src="tests.js"></script>
+    <script src="html/tests.html.js"></script>
     <script src="react/tests.react.build.js"></script>
     <script>
       mocha.run();
