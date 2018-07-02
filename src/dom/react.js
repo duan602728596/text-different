@@ -55,28 +55,32 @@ class TextDifferentForReact extends Component{
     for(let i: number = 0, j: number = tree.length, o: number = 1, n: number = 1; i < j; i++){
       const item: Object = tree[i];
       switch(item.status){
+        // 普通
         case 0:
           oldCodeText += `<p class="${ classNameBasic }-line-normal">${ item.text }</p>\n`;
           newCodeText += `<p class="${ classNameBasic }-line-normal">${ item.text }</p>\n`;
           o++;
           n++;
           break;
+        // 左侧旧代码
         case 1:
           oldCodeText += `<p class="${ classNameBasic }-line-old">${ item.text }</p>\n`;
           newCodeText += `<p class="${ classNameBasic }-line-space" data-mark="space"></p>\n`;
           o++;
           break;
+        // 右侧新代码
         case 2:
           oldCodeText += `<p class="${ classNameBasic }-line-space" data-mark="space"></p>\n`;
           newCodeText += `<p class="${ classNameBasic }-line-new">${ item.text }</p>\n`;
           n++;
           break;
+        // 行代码内部分发生变化
         case 3:
           const textArr: string = item.text;
           let oldLineText: string = `<p class="${ classNameBasic }-line-old">`;
           let newLineText: string = `<p class="${ classNameBasic }-line-new">`;
-          let oldCode: ?string = null;
-          let newCode: ?string = null;
+          let oldCode: ?string = null;   // 旧代码缓存
+          let newCode: ?string = null;   // 新代码缓存
           for(let i2: number = 0, j2: number = textArr.length; i2 < j2; i2++){
             const item2: Object = textArr[i2];
             if(item2.status === 0){
