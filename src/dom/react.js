@@ -22,6 +22,10 @@ class TextDifferentForReact extends Component{
   newCodeRef: Object = createRef();
 
   componentDidMount(): void{
+    this.init();
+  }
+  // 生成代码
+  init(): void{
     const oldCode: string = this.props.oldCode;
     const newCode: string = this.props.newCode;
 
@@ -118,6 +122,9 @@ class TextDifferentForReact extends Component{
       oldCodeText,
       newCodeText
     };
+  }
+  componentDidUpdate(): void{
+    this.init();
   }
   // 生成行号
   numberLine(dom: Element): void{
