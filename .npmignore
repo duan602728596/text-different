@@ -14,9 +14,9 @@ yarn-error.log
 src
 test
 config
+example
 gulpfile.js
 .babelrc
 .eslintignore
 .eslintrc.yml
-example
 .gitignore

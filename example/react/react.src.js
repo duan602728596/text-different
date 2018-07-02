@@ -1,3 +1,7 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import TextDifferentForReact from 'TextDifferentForReact';
+
 const oldScript = `/*
 666
  */
@@ -61,10 +65,32 @@ class Text extends Component{
 
 export default Text;`;
 
+class Example extends Component{
+  constructor(){
+    super(...arguments);
+
+    this.state = {
+      oldCode: oldScript,
+      newCode: newScript
+    };
+  }
+  onChange(){
+    this.setState({
+      oldCode: 'var a = 5;',
+      newCode: 'var a = 6;'
+    });
+  }
+  render(){
+    return (
+      <TextDifferentForReact oldCode={ this.state.oldCode }
+        newCode={ this.state.newCode }
+        type="javascript"
+      />
+    );
+  }
+}
+
 ReactDOM.render(
-  React.createElement(TextDifferentForReact, {
-    oldCode: oldScript,
-    newCode: newScript
-  }),
+  <Example />,
   document.getElementById('root')
 );

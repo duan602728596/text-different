@@ -13,3 +13,4 @@ yarn-error.log
 # gulp
 build
 lib
+example/react/react.build.js
