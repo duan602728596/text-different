@@ -16,4 +16,4 @@ lib
 
 # build
 example/react/react.build.js
-tests/react/tests.react.build.js
+test/react/tests.react.build.js
