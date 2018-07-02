@@ -45,15 +45,16 @@ async function build(){
   // 文件输入和输出路径
   const textDifferentEntry = dirname + '/lib/index.js';
   const textDifferentDist = dirname + '/build/text-different.js';
+  const textDifferentForHtmlEntry = dirname + '/lib/dom/html.js';
+  const textDifferentForHtmlDist = dirname + '/build/text-different-for-html.js';
   const textDifferentForReactEntry = dirname + '/lib/dom/react.js';
   const textDifferentForReactDist = dirname + '/build/text-different-for-react.js';
 
   // 输入
   const bundle = await Promise.all([
     rollup({ input: textDifferentEntry }),
-    rollup({
-      input: textDifferentForReactEntry
-    })
+    rollup({ input:  textDifferentForHtmlEntry }),
+    rollup({ input: textDifferentForReactEntry })
   ]);
 
   // 输出
@@ -64,6 +65,15 @@ async function build(){
       file: textDifferentDist
     }),
     bundle[1].write({
+      format: 'umd',
+      name: 'TextDifferentForHtml',
+      file: textDifferentForHtmlDist,
+      globals: {
+        highlightjs: 'hljs',
+        'text-different': 'textDifferent'
+      }
+    }),
+    bundle[2].write({
       format: 'umd',
       name: 'TextDifferentForReact',
       file: textDifferentForReactDist,
