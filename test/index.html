@@ -8,11 +8,26 @@
   </head>
   <body>
     <div id="mocha"></div>
+    <!-- react -->
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom-test-utils.development.js"></script>
+    <script src="../node_modules/prop-types/prop-types.min.js"></script>
+    <script src="../node_modules/highlightjs/highlight.pack.js"></script>
+    <!-- 核心方法 -->
     <script src="../build/text-different.js"></script>
+    <!-- react组件 -->
+    <script src="../build/text-different-for-react.js"></script>
+    <!-- 测试 -->
     <script src="mocha.js"></script>
     <script src="../node_modules/chai/chai.js"></script>
     <script>mocha.setup('bdd');</script>
+    <script>
+      const expect = chai.expect;
+      const textDifferent = window.textDifferent;
+    </script>
     <script src="tests.js"></script>
+    <script src="react/tests.react.build.js"></script>
     <script>
       mocha.run();
     </script>

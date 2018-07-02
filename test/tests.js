@@ -1,6 +1,3 @@
-const expect = chai.expect;
-const textDifferent = window.textDifferent;
-
 describe('text-different测试用例', function(){
   describe('验证文本一致时的差异性', function(){
     it('test: 0', function(){
