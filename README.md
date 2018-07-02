@@ -8,6 +8,8 @@ Compare text differences and generate a difference tree.
 [text-different-for-html](#text-different-for-html): Provide native methods to display code.   
 [text-different-for-react](#text-different-for-react): Provide React components to display code.
 
+![demo](https://raw.githubusercontent.com/duan602728596/text-different/master/example/image/demo2.png)
+
 ## How to use
 
 ```html
