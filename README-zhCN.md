@@ -2,12 +2,16 @@
 
 ## 作用
 
-比较文本的不同，并生成差异树。
+比较文本的不同，并生成差异树。   
+[text-different-for-html](#text-different-for-html)：提供原生的方法来展示代码。   
+[text-different-for-react](#text-different-for-react)：提供React组件来展示代码。
+
+![demo](https://raw.githubusercontent.com/duan602728596/text-different/master/example/image/demo2.png)
 
 ## 如何使用
 
 ```html
-<script src="text-different.js"></script>
+<script src="text-different/build/text-different.js"></script>
 <script>
 const oldText = '旧文本';
 const newText = '新文本';
@@ -79,7 +83,81 @@ const tree = [
 
 ## 输出解析结果
 
-该方法只提供文本解析树，如果想输入对比的解析结果，可以查看[example](https://github.com/duan602728596/text-different/tree/master/example)。
+该方法只提供文本解析树，如果想输出对比的解析结果，可以查看[example](https://github.com/duan602728596/text-different/tree/master/example)。
 
-![demo](https://raw.githubusercontent.com/duan602728596/text-different/master/example/demo.png)
+![demo](https://raw.githubusercontent.com/duan602728596/text-different/master/example/image/demo1.png)
+
+
+## text-different-for-html
+
+依赖**highlightjs**，你必须安装它。
+
+### 样例代码
+
+```html
+<html>
+  <head>
+    <link rel="stylesheet" href="highlightjs/styles/xcode.css">
+    <link rel="stylesheet" href="text-different/build/style/text-different.css">
+  </head>
+  <body>
+    <div id=root></div>
+    <script src="highlightjs/highlight.pack.js"></script>
+    <script src="text-different/build/text-different.js"></script>
+    <script src="text-different/build/text-different-for-html.js"></script>
+    <script>
+      const tdfh = new TextDifferentForHtml(
+        document.getElementById('root'),   // 用来渲染展示代码的dom
+        'javascript'                       // 代码的类型
+      );
+      tdfh.render({
+        oldCode: 'def func():\n  x = 5',   // 旧代码
+        newCode: 'def func():\n  x = 32'   // 新代码
+      });
+    </script>
+  </body>
+</html>
+```
+
+### 方法
+
+* TextDifferentForHtml：初始化类   
+  参数：
+  * element { Element }：用来渲染展示代码的dom
+  * type { string }：代码的类型
+* .render { Function }：渲染代码
+  参数：
+  * object：
+    * oldCode { string }：旧代码
+    * newCode { string }：新代码
+
+## text-different-for-react
+
+依赖**highlightjs**、**react**、**react-dom**、**prop-types**，你必须安装它们。
+
+### 样例代码
+
+```javascript
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import TextDifferentForReact from 'text-different/lib/dom/react';
+
+ReactDOM.render(
+  <TextDifferentForReact type="python"
+    oldCode={ 'def func():\n  x = 5' }
+    newCode={ 'def func():\n  x = 32' }
+  />,
+  document.getElementById('root')
+);
+```
+
+### 参数
+
+| 参数    | 说明     | 类型   |
+| ---     | ---      | ---    |
+| type    | 代码类型 | string |
+| oldCode | 旧代码   | string |
+| newCode | 新代码   | string |
+
+
 
