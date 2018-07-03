@@ -1,3 +1,7 @@
+### v1.2.0
+
+* Compatible with older versions of React.
+
 ### v1.1.0
 
 * Modified the initialization method of the code block to solve the problem that the code block is only rendered once.
