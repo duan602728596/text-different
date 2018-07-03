@@ -13,7 +13,8 @@ export function init(oldCode: string, newCode: string, oldElement: Element, newE
   oldElement.innerHTML = oldCodeText;
   newElement.innerHTML = newCodeText;
 
-  hljs.initHighlightingOnLoad();
+  hljs.highlightBlock(oldElement);
+  hljs.highlightBlock(newElement);
 
   numberLine(oldElement);
   numberLine(newElement);
@@ -113,7 +114,7 @@ export function numberLine(dom: Element): void{
   }
 
   const lineLenStr: number = String(line.length).length;
-  const width: number = 10 * lineLenStr;
+  const width: number = 15 * lineLenStr;
   const left: number = width + 8;
 
   const p: Element = dom.getElementsByTagName('p');
