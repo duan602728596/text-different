@@ -140,6 +140,8 @@ const tree = [
 ```javascript
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import 'highlightjs/styles/xcode.css';
+import 'text-different/build/style/text-different.css';
 import TextDifferentForReact from 'text-different/lib/dom/react';
 
 ReactDOM.render(
