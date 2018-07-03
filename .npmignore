@@ -20,3 +20,5 @@ gulpfile.js
 .eslintignore
 .eslintrc.yml
 .gitignore
+CHANGELOG.md
+CHANGELOG-zhCN.md
