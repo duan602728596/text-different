@@ -108,7 +108,7 @@ const tree = [
     <script>
       const tdfh = new TextDifferentForHtml(
         document.getElementById('root'),   // 用来渲染展示代码的dom
-        'javascript'                       // 代码的类型
+        'python'                           // 代码的类型
       );
       tdfh.render({
         oldCode: 'def func():\n  x = 5',   // 旧代码

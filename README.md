@@ -110,7 +110,7 @@ Depends on **highlightjs**, you have to install it.
     <script>
       const tdfh = new TextDifferentForHtml(
         document.getElementById('root'),   // The dom used to render the display code
-        'javascript'                       // Type of code
+        'python'                           // Type of code
       );
       tdfh.render({
         oldCode: 'def func():\n  x = 5',   // Old code
