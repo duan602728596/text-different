@@ -157,8 +157,8 @@ ReactDOM.render(
 
 ### Parameter
 
-| 参数    | 说明         | 类型   |
-| ---     | ---          | ---    |
-| type    | Type of code | string |
-| oldCode | Old code     | string |
-| newCode | New code     | string |
+| parameter | description  | type   |
+| ---       | ---          | ---    |
+| type      | Type of code | string |
+| oldCode   | Old code     | string |
+| newCode   | New code     | string |
