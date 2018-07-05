@@ -20,11 +20,11 @@ class TextDifferentForHtml{
     this.code = this.element.getElementsByTagName('code');
   }
   // 渲染代码
-  renderCode(oldCode: string, newCode: string): void{
-    init(oldCode, newCode, this.code[0], this.code[1]);
+  renderCode(oldCode: string, newCode: string, hasNumberLine: boolean): void{
+    init(oldCode, newCode, this.code[0], this.code[1], hasNumberLine);
   }
-  render({ oldCode = '', newCode = '' }: { oldCode: string, newCode: string }): void{
-    this.renderCode(oldCode, newCode);
+  render({ oldCode = '', newCode = '', hasNumberLine }: { oldCode: string, newCode: string, hasNumberLine: ?boolean }): void{
+    this.renderCode(oldCode, newCode, hasNumberLine);
   }
 }
 

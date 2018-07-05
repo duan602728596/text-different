@@ -4,7 +4,14 @@ import textDifferent from 'text-different';
 // 样式名称的基础
 export const classNameBasic: string = 'text-different';
 
-export function init(oldCode: string, newCode: string, oldElement: Element, newElement: Element): void{
+/**
+ * @param { string } oldCode
+ * @param { string } newCode
+ * @param { Element } oldElement
+ * @param { Element } newElement
+ * @param { boolean } hasNumberLine: 行号
+ */
+export function init(oldCode: string, newCode: string, oldElement: Element, newElement: Element, hasNumberLine: boolean = true): void{
   const { oldCodeText, newCodeText }: {
     oldCodeText: string,
     newCodeText: string
@@ -16,8 +23,10 @@ export function init(oldCode: string, newCode: string, oldElement: Element, newE
   hljs.highlightBlock(oldElement);
   hljs.highlightBlock(newElement);
 
-  numberLine(oldElement);
-  numberLine(newElement);
+  if(hasNumberLine){
+    numberLine(oldElement);
+    numberLine(newElement);
+  }
 }
 
 // 获取旧文本和新文本
