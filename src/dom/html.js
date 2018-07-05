@@ -23,8 +23,8 @@ class TextDifferentForHtml{
   renderCode(oldCode: string, newCode: string, hasNumberLine: boolean): void{
     init(oldCode, newCode, this.code[0], this.code[1], hasNumberLine);
   }
-  render({ oldCode = '', newCode = '', hasNumberLine }: { oldCode: string, newCode: string, hasNumberLine: ?boolean }): void{
-    this.renderCode(oldCode, newCode, hasNumberLine);
+  render({ oldCode = '', newCode = '', hasLineNumber }: { oldCode: string, newCode: string, hasLineNumber: ?boolean }): void{
+    this.renderCode(oldCode, newCode, hasLineNumber);
   }
 }
 

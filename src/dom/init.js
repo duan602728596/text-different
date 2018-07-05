@@ -9,9 +9,9 @@ export const classNameBasic: string = 'text-different';
  * @param { string } newCode
  * @param { Element } oldElement
  * @param { Element } newElement
- * @param { boolean } hasNumberLine: 行号
+ * @param { boolean } hasLineNumber: 行号
  */
-export function init(oldCode: string, newCode: string, oldElement: Element, newElement: Element, hasNumberLine: boolean = true): void{
+export function init(oldCode: string, newCode: string, oldElement: Element, newElement: Element, hasLineNumber: boolean = true): void{
   const { oldCodeText, newCodeText }: {
     oldCodeText: string,
     newCodeText: string
@@ -23,9 +23,9 @@ export function init(oldCode: string, newCode: string, oldElement: Element, newE
   hljs.highlightBlock(oldElement);
   hljs.highlightBlock(newElement);
 
-  if(hasNumberLine){
-    numberLine(oldElement);
-    numberLine(newElement);
+  if(hasLineNumber){
+    lineNumber(oldElement);
+    lineNumber(newElement);
   }
 }
 
@@ -116,7 +116,7 @@ export function getCodeText(oldCode: string, newCode: string): {
 }
 
 // 生成行号
-export function numberLine(dom: Element): void{
+export function lineNumber(dom: Element): void{
   const line: string[] = dom.innerText.split('\n');
   if(line[line.length - 1] === ''){
     line.pop();

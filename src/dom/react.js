@@ -7,13 +7,13 @@ class TextDifferentForReact extends Component{
     oldCode: PropTypes.string,
     newCode: PropTypes.string,
     type: PropTypes.string,
-    hasNumberLine: PropTypes.bool
+    hasLineNumber: PropTypes.bool
   };
   static defaultProps: Object = {
     oldCode: '',
     newCode: '',
     type: '',
-    hasNumberLine: true
+    hasLineNumber: true
   };
 
   oldCodeRef: Object | Function = createRef ? createRef()
@@ -22,10 +22,10 @@ class TextDifferentForReact extends Component{
     : (element: Element): { current: Element } => this.newCodeRef = { current: element };
 
   componentDidMount(): void{
-    init(this.props.oldCode, this.props.newCode, this.oldCodeRef.current, this.newCodeRef.current, this.props.hasNumberLine);
+    init(this.props.oldCode, this.props.newCode, this.oldCodeRef.current, this.newCodeRef.current, this.props.hasLineNumber);
   }
   componentDidUpdate(): void{
-    init(this.props.oldCode, this.props.newCode, this.oldCodeRef.current, this.newCodeRef.current, this.props.hasNumberLine);
+    init(this.props.oldCode, this.props.newCode, this.oldCodeRef.current, this.newCodeRef.current, this.props.hasLineNumber);
   }
   render(): React.Node{
     const type: string = this.props.type;
