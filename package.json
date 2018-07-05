@@ -1,7 +1,7 @@
 {
   "name": "text-different",
-  "version": "1.2.0",
-  "description": "比较文本的不同，并生成差异树。",
+  "version": "1.2.1",
+  "description": "比较代码（文本）的不同，并高亮展示的组件。",
   "main": "lib/index.js",
   "author": {
     "name": "段昊辰",
