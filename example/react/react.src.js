@@ -74,9 +74,9 @@ class Example extends Component{
   }
   render(){
     return (
-      <TextDifferentForReact oldCode={ this.state.oldCode }
+      <TextDifferentForReact type="javascript"
+        oldCode={ this.state.oldCode }
         newCode={ this.state.newCode }
-        type="javascript"
       />
     );
   }
