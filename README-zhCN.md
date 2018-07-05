@@ -112,7 +112,8 @@ const tree = [
       );
       tdfh.render({
         oldCode: 'def func():\n  x = 5',   // 旧代码
-        newCode: 'def func():\n  x = 32'   // 新代码
+        newCode: 'def func():\n  x = 32',  // 新代码
+        hasLineNumber: true                // 是否显示行号
       });
     </script>
   </body>
@@ -155,11 +156,12 @@ ReactDOM.render(
 
 ### 参数
 
-| 参数    | 说明     | 类型   |
-| ---     | ---      | ---    |
-| type    | 代码类型 | string |
-| oldCode | 旧代码   | string |
-| newCode | 新代码   | string |
+| 参数         | 说明         | 类型    |
+| ---          | ---          | ---     |
+| type         | 代码类型     | string  |
+| oldCode      | 旧代码       | string  |
+| newCode      | 新代码       | string  |
+| hasLineNumber| 是否显示行号 | boolean |
 
 
 

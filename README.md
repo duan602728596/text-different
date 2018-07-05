@@ -114,7 +114,8 @@ Depends on **highlightjs**, you have to install it.
       );
       tdfh.render({
         oldCode: 'def func():\n  x = 5',   // Old code
-        newCode: 'def func():\n  x = 32'   // New code
+        newCode: 'def func():\n  x = 32',  // New code
+        hasLineNumber: true                // Whether to display the line number
       });
     </script>
   </body>
@@ -157,8 +158,9 @@ ReactDOM.render(
 
 ### Parameter
 
-| parameter | description  | type   |
-| ---       | ---          | ---    |
-| type      | Type of code | string |
-| oldCode   | Old code     | string |
-| newCode   | New code     | string |
+| parameter     | description                        | type    |
+| ---           | ---                                | ---     |
+| type          | Type of code                       | string  |
+| oldCode       | Old code                           | string  |
+| newCode       | New code                           | string  |
+| hasLineNumber | Whether to display the line number | boolean |
