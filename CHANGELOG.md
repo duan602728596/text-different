@@ -1,3 +1,7 @@
+### v1.2.1
+
+Add line number display and hide features.
+
 ### v1.2.0
 
 * Compatible with older versions of React.
