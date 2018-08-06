@@ -12,16 +12,19 @@ function babelProject(){
     .pipe(gulp.dest(dirname + '/lib'));
 }
 
-function sassProject(){
+function sassLibProject(){
   return gulp.src(dirname + '/src/**/*.sass')
     .pipe(sass({
-      outputStyle: 'compressed'
+      outputStyle: 'compact'
     }).on('error', sass.logError))
     .pipe(gulp.dest(dirname + '/lib'));
 }
 
-function copy(){
-  return gulp.src(dirname + '/lib/**/*.css')
+function sasBuildProject(){
+  return gulp.src(dirname + '/src/**/*.sass')
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }).on('error', sass.logError))
     .pipe(gulp.dest(dirname + '/build'));
 }
 
@@ -106,7 +109,7 @@ async function build(){
 module.exports = function(dir){
   dirname = dir;
   gulp.task('default', gulp.series(
-    gulp.parallel(babelProject, sassProject),
-    gulp.parallel(build, copy)
+    gulp.parallel(babelProject, sassLibProject, sasBuildProject),
+    build
   ));
 };
