@@ -14,7 +14,7 @@ module.exports = {
     'prop-types': 'window.PropTypes',
     highlightjs: 'window.hljs',
     'text-different': 'window.textDifferent',
-    'TextDifferentForReact': 'window.TextDifferentForReact',
+    TextDifferentForReact: 'window.TextDifferentForReact',
   },
   module: {
     rules: [
