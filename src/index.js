@@ -1,6 +1,6 @@
-import generatingCodeTree from './unit/generatingCodeTree';
-import oneLineComparison from './unit/oneLineComparison';
-import entityCharacter from './unit/entityCharacter';
+import generatingCodeTree from './utils/generatingCodeTree';
+import oneLineComparison from './utils/oneLineComparison';
+import entityCharacter from './utils/entityCharacter';
 
 /**
  * @param { string } oldText: 旧代码
