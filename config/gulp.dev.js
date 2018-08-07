@@ -4,7 +4,6 @@ const plumber = require('gulp-plumber');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const { rollup } = require('rollup');
-const browserSync = require('browser-sync').create();
 const errorHandler = require('./errorHandler.js');
 
 const reload = browserSync.reload;
@@ -90,22 +89,11 @@ async function build(){
 }
 
 function watchJs(){
-  gulp.watch(dirname + '/src/**/*.js', gulp.series(babelProject, build, reload));
+  gulp.watch(dirname + '/src/**/*.js', gulp.series(babelProject, build));
 }
 
 function watchSass(){
-  gulp.watch(dirname + '/src/**/*.sass', gulp.series(sassProject, copy, reload));
-}
-
-function initBrowserSync(){
-  browserSync.init({
-    server: {
-      baseDir: dirname,
-      index: './example/index.html'
-    },
-    files: dirname,
-    startPath: './example/index.html'
-  });
+  gulp.watch(dirname + '/src/**/*.sass', gulp.series(sassProject, copy));
 }
 
 module.exports = function(dir){
@@ -113,6 +101,6 @@ module.exports = function(dir){
   gulp.task('default', gulp.series(
     gulp.parallel(babelProject, sassProject),
     gulp.parallel(build, copy),
-    gulp.parallel(watchJs, watchSass, initBrowserSync)
+    gulp.parallel(watchJs, watchSass)
   ));
 };
