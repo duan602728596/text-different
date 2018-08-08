@@ -6,7 +6,6 @@ const sass = require('gulp-sass');
 const { rollup } = require('rollup');
 const errorHandler = require('./errorHandler.js');
 
-const reload = browserSync.reload;
 let dirname = null;
 
 function babelProject(){
