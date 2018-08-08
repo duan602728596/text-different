@@ -23,7 +23,7 @@ const tree = textDifferent(oldText, newText);
 或
 
 ```javascript
-import textDifferent from 'text-different'；
+import textDifferent from 'text-different';
 const oldText = '旧文本';
 const newText = '新文本';
 

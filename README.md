@@ -25,7 +25,7 @@ const tree = textDifferent(oldText, newText);
 or
 
 ```javascript
-import textDifferent from 'text-different'；
+import textDifferent from 'text-different';
 const oldText = 'Old text';
 const newText = 'New text';
 
